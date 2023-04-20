@@ -1,0 +1,12 @@
+- name: Activar ip forwarding.
+  ansible.builtin.shell: echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+
+- name: Copiar configuración de red
+  ansible.builtin.copy:
+    src: interfaces
+    dest: /etc/network/interfaces
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - reiniciar maquina

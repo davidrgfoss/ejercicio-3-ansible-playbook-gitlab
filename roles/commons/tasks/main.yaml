@@ -1,0 +1,11 @@
+- name: Actualizamos Paquetes
+  apt: update_cache=yes upgrade=yes
+
+- name: Instalar Paquetes
+  apt:
+    pkg: 
+      - resolvconf
+
+- name: Copiar clave ssh personal a las maquinas.
+  ansible.builtin.shell: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDIk495ldv+NiESprBRI0Sx96hToTrOqtWqk8H3BF09QJcHd15XLmlfGyIFlSAuIA6tiLHvxmEDuLTqVQ3LsxOR/przD7AaYfi5eTSB//IuTcD4/OP5copheMcLH+i4HD8YroQBtynOhTPRzxiQWXMVu8i7fY0Sv5NvlY/P6Cb6qTx8+uHAtFp15njzdefs9Lh9X1W+OySHRw19TeJ0sNP4wvLJGAS0PaxBL6KL/EOQGlrDbNl1zJ9QSBk7pqlkggmeRiL6nLkbPWUB8yolxppiVKAc529wOEsary5/hhlpl+fsedUbn2kOg6ryWYGLLEOPiMK2eQg9cP79FkAJvvA7DRjgM0YwEJ+L8Yb3VLJE6KHhWG9c2UlLLZMue8d0maPwdvvTCaloeH2/nEe0IA3ICau5rIU35OGxFdXuNAhg0PbpX3lzy7RLk/FWg+e+n5vdw/9CX3sl/SEHoZvwEnMlIavpqteFoitYMTDw01OrkWdMRPVPY13A/9VhquOYTGM= davidrg@pop-os" >> /home/vagrant/.ssh/authorized_keys
+
